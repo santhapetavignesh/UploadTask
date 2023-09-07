@@ -23,6 +23,7 @@ app.get('/user',async (req,res)=>{
     console.log('hit ')
    const resp = await WorkBook.find();
    return res.status(200).json({success:true, data: resp})
+   
 })
 app.post("/upload",async(req,res)=>{
     try{
@@ -37,6 +38,7 @@ app.post("/upload",async(req,res)=>{
         const doc = new WorkBook(data);
         const res = await doc.save()
         res.status(201).json(data);
+        
 
 }
 catch(err){
